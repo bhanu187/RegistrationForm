@@ -1,0 +1,49 @@
+<mat-card>
+    <h1 class="center">Registration Form</h1>
+    <form [formGroup]="registrationForm">
+      <div class="form-group">
+        <label for="exampleInputfname">First Name </label>
+        <input type="text" formControlName="firstname" class="form-control" id="exampleInputfname" >
+      </div>
+      <div *ngIf="firstname.invalid && firstname.touched" class="alert alert-danger">
+        First Name is required.
+      </div>
+      <div class="form-group">
+        <label for="exampleInputlname">Last Name </label>
+        <input type="text" formControlName="lastname" class="form-control" id="exampleInputlname" >
+      </div>
+      <div *ngIf="lastname.invalid && lastname.touched" class="alert alert-danger">
+        Last Name is required.
+      </div>
+      <div class="form-group">
+        <label for="exampleInputuname">User Name </label>
+        <input type="text" formControlName="username" class="form-control" id="exampleInputuname" >
+      </div>
+      <div *ngIf="username.invalid && username.touched" class="alert alert-danger">
+        User Name is required.
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div *ngIf="password.invalid && password.touched" class="alert alert-danger">
+        Password is required.
+      </div>
+      <div class="form-group">
+        <label for="exampleInputdob">Date Of Birth</label>
+        <input type="text" formControlName="dob" class="form-control" id="exampleInputdob" >
+      </div>
+      <div *ngIf="dob.invalid && dob.touched" class="alert alert-danger">
+        Date Of Birth is required.
+      </div>
+      <div class="form-group">
+        <label for="exampleInputcountry">Country </label>
+        <input type="text" formControlName="country" class="form-control" id="exampleInputcountry" >
+      </div>
+      <div *ngIf="country.invalid && country.touched" class="alert alert-danger">
+        Country is required.
+      </div>
+      <button type="submit"(click)="onSubmit()"  routerLinkActive="router-link-active"  class="btn btn-primary"  [disabled]="registrationForm.invalid">Submit</button>
+    </form>
+  </mat-card>
+  
